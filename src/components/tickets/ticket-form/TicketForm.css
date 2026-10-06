@@ -1,0 +1,125 @@
+.ticket-form-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 28px 18px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  border-radius: 12px 12px 0 0;
+  cursor: grab;
+  touch-action: none;
+}
+
+.ticket-form-header:hover {
+  background: var(--color-surface-muted);
+}
+
+.is-dragging .ticket-form-header {
+  cursor: grabbing;
+  background: var(--color-surface-muted);
+}
+
+.ticket-form-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ticket-form-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: var(--color-brand-soft);
+  color: var(--color-brand-text);
+  font-size: var(--font-size-2xl);
+}
+
+.ticket-form-header h2 {
+  margin: 0 0 3px;
+  color: var(--color-text);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.ticket-form-header p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
+}
+
+.ticket-form-close {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-2xl);
+  cursor: pointer;
+}
+
+.ticket-form-close:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.ticket-form-body {
+  padding: 24px 28px 26px;
+}
+
+.ticket-form-body .row {
+  --bs-gutter-y: 1.1rem;
+}
+
+.ticket-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 28px;
+  border-top: 1px solid var(--color-border-subtle);
+  background: var(--color-surface-muted);
+  border-radius: 0 0 12px 12px;
+}
+
+.ticket-form-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.ticket-form-hint-divider {
+  color: var(--color-border-strong);
+}
+
+.ticket-form-hint kbd {
+  padding: 1px 5px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-2xs);
+  box-shadow: none;
+}
+
+.ticket-form-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+@media (max-width: 576px) {
+  .ticket-form-hint {
+    display: none;
+  }
+}

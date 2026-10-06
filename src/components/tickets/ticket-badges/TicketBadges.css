@@ -1,0 +1,122 @@
+.ticket-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.ticket-status-badge.status-todo {
+  background: var(--color-surface-active);
+  color: var(--color-text-secondary);
+}
+
+.ticket-status-badge.status-in_progress {
+  background: var(--color-info-soft);
+  color: var(--color-info-text);
+}
+
+.ticket-status-badge.status-in_review {
+  background: var(--color-warning-soft);
+  color: var(--color-warning-text);
+}
+
+.ticket-status-badge.status-completed {
+  background: var(--color-success-soft);
+  color: var(--color-success-text);
+}
+
+.ticket-priority {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.ticket-priority.priority-low {
+  color: var(--color-success-text);
+}
+
+.ticket-priority.priority-medium {
+  color: var(--color-link);
+}
+
+.ticket-priority.priority-high {
+  color: var(--color-warning-text);
+}
+
+.ticket-priority.priority-critical {
+  color: var(--color-danger);
+}
+
+.ticket-due {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.ticket-due.due-overdue {
+  background: var(--color-danger-soft);
+  color: var(--color-danger-text);
+}
+
+.ticket-due.due-today,
+.ticket-due.due-soon {
+  background: var(--color-warning-soft);
+  color: var(--color-warning-text);
+}
+
+.ticket-due.due-later {
+  background: var(--color-surface-active);
+  color: var(--color-text-secondary);
+}
+
+.ticket-due.due-done {
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.ticket-due-empty {
+  color: var(--color-text-placeholder);
+}
+
+.ticket-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ticket-time.is-running {
+  color: var(--color-success-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+.ticket-time.is-running i {
+  color: var(--color-success);
+  animation: ticket-time-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes ticket-time-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticket-time.is-running i {
+    animation: none;
+  }
+}

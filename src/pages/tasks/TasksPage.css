@@ -1,0 +1,63 @@
+.tickets-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tickets-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tickets-count {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--color-surface-active);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.tickets-no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 16px;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: 12px;
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.tickets-no-results i {
+  margin-bottom: 10px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-display-sm);
+}
+
+.tickets-no-results h5 {
+  margin-bottom: 4px;
+  color: var(--color-text);
+}
+
+.tickets-no-results p {
+  margin-bottom: 16px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+@media (max-width: 576px) {
+  .tickets-header {
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+
+  .tickets-header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,209 @@
+.ticket-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.board-column {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface-muted);
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.board-column.is-drop-target {
+  border-color: var(--color-accent);
+  background: var(--color-primary-soft);
+}
+
+.board-column-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 12px 10px 14px;
+}
+
+.board-column-header h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.board-column-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+}
+
+.status-in_progress .board-column-dot {
+  background: var(--color-info);
+}
+
+.status-in_review .board-column-dot {
+  background: var(--color-warning);
+}
+
+.status-completed .board-column-dot {
+  background: var(--color-success);
+}
+
+.board-column-count {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--color-surface-active);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.board-column-add {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.board-column-add:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.board-column-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 10px 12px;
+}
+
+.board-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 12px 11px;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-border-strong);
+  border-radius: 9px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-align: left;
+  cursor: grab;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.board-card:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-1px);
+}
+
+.board-card:active {
+  cursor: grabbing;
+}
+
+.board-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.board-card.priority-edge-low {
+  border-left-color: var(--color-success);
+}
+
+.board-card.priority-edge-medium {
+  border-left-color: var(--color-info);
+}
+
+.board-card.priority-edge-high {
+  border-left-color: var(--color-warning);
+}
+
+.board-card.priority-edge-critical {
+  border-left-color: var(--color-danger);
+}
+
+.board-card-ghost {
+  opacity: 0.4;
+}
+
+.board-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.board-card-number {
+  color: var(--color-link);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.board-card-title {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.board-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.board-card-meta:empty {
+  display: none;
+}
+
+.board-card-prs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-purple);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.board-column-empty {
+  padding: 22px 10px;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: 9px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .ticket-board {
+    grid-template-columns: repeat(4, minmax(260px, 85%));
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 0;
+  }
+
+  .board-column {
+    min-height: 300px;
+    scroll-snap-align: start;
+  }
+}

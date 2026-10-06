@@ -1,0 +1,71 @@
+.app-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 7vh 16px 24px;
+  overflow: hidden auto;
+  background: var(--color-overlay);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: app-modal-fade 0.18s ease-out;
+}
+
+.app-modal {
+  width: 100%;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-modal);
+  animation: app-modal-rise 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: box-shadow 0.15s ease;
+}
+
+.app-modal.is-dragging {
+  box-shadow: var(--shadow-modal-active);
+  user-select: none;
+}
+
+@keyframes app-modal-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes app-modal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-modal-backdrop,
+  .app-modal {
+    animation: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .app-modal-backdrop {
+    padding: 12px;
+  }
+}
+
+.app-modal-backdrop.align-center {
+  align-items: center;
+  padding-top: 24px;
+}
+
+.app-modal.size-sm {
+  max-width: 440px;
+}
+
+.app-modal.size-md {
+  max-width: 600px;
+}

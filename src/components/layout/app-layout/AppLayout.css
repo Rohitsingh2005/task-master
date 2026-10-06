@@ -1,0 +1,66 @@
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+}
+
+.main-wrapper {
+  flex: 1;
+  min-width: 0;
+  margin-left: 250px;
+}
+
+.main-content {
+  padding: 32px;
+  background: var(--color-bg);
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .main-content {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 991px) {
+  .main-wrapper {
+    margin-left: 70px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-wrapper {
+    margin-left: 0;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1044;
+    display: block;
+    background: var(--color-image-overlay);
+    animation: sidebar-backdrop-in 0.2s ease-out;
+  }
+
+  body.nav-drawer-open {
+    overflow: hidden;
+  }
+}
+
+@keyframes sidebar-backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-backdrop {
+    animation: none;
+  }
+}

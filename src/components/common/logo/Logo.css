@@ -1,0 +1,51 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.logo-mark {
+  flex-shrink: 0;
+  display: block;
+  filter: drop-shadow(0 4px 10px var(--color-logo-glow));
+}
+
+.logo-gradient-start {
+  stop-color: var(--color-logo-start);
+}
+
+.logo-gradient-end {
+  stop-color: var(--color-logo-end);
+}
+
+.logo-mark-shine {
+  fill: var(--color-logo-shine);
+}
+
+.logo-mark-check {
+  fill: none;
+  stroke: var(--color-logo-check);
+  stroke-width: 4.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.logo-mark-dot {
+  fill: var(--color-logo-accent);
+  stroke: var(--color-logo-end);
+  stroke-width: 1.5;
+}
+
+.logo-wordmark {
+  color: inherit;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.logo-wordmark-accent {
+  color: var(--color-logo-wordmark-accent);
+  font-weight: var(--font-weight-bold);
+}

@@ -1,0 +1,104 @@
+.ticket-table-card {
+  overflow: hidden;
+}
+
+.ticket-table th {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.ticket-row {
+  cursor: pointer;
+}
+
+.ticket-number-link {
+  color: var(--color-link);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ticket-number-link:hover {
+  text-decoration: underline;
+}
+
+.ticket-title-cell {
+  max-width: 420px;
+}
+
+.ticket-description {
+  max-width: 350px;
+}
+
+.ticket-timer-button {
+  width: 31px;
+}
+
+@media (max-width: 767px) {
+  .ticket-table thead {
+    display: none;
+  }
+
+  .ticket-table,
+  .ticket-table tbody {
+    display: block;
+  }
+
+  .ticket-table .ticket-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .ticket-table .ticket-row:last-child {
+    border-bottom: none;
+  }
+
+  .ticket-table .ticket-row:hover {
+    background: var(--color-surface-hover);
+  }
+
+  .ticket-table .ticket-row > td {
+    display: block;
+    padding: 0 !important;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .ticket-cell-number {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ticket-cell-actions {
+    order: 1;
+  }
+
+  .ticket-cell-title {
+    order: 2;
+    flex-basis: 100%;
+    min-width: 0;
+  }
+
+  .ticket-cell-meta {
+    order: 3;
+  }
+
+  .ticket-cell-meta:has(.ticket-due-empty) {
+    display: none !important;
+  }
+
+  .ticket-title-cell,
+  .ticket-description {
+    max-width: none;
+  }
+
+  .ticket-table-card .table-responsive {
+    overflow-x: visible;
+  }
+}
